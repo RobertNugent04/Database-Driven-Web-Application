@@ -1,1 +1,3 @@
-# ServerSideCA2 - Start
+# ServerSideCA2 
+
+A repo for PHP college project
