@@ -2,10 +2,10 @@
 require_once('database.php');
 
 // Get products
-$queryProducts = 'SELECT * FROM products';
-$statement = $db->prepare($queryProducts);
+$queryPhones = 'SELECT * FROM phones';
+$statement = $db->prepare($queryPhones);
 $statement->execute();
-$products = $statement->fetchAll();
+$phones = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -19,31 +19,31 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
-<header><h1>Product Manager</h1></header>
+<header><h1>Phone Store</h1></header>
 <main>
     <h1>Product List</h1>
     <section>
         <!-- display a table of products -->
         <table>
             <tr>
-                <th>Code</th>
+                <th>ID</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Brand</th>
-                <th>Shipping Cost</th>
+                <th>Company</th>
+                <th>RAM_GB</th>
+                <th>Space</th>
                 <th>Delete</th>
             </tr>
 
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($phones as $phone) : ?>
             <tr>
-                <td><?php echo $product['productCode']; ?></td>
-                <td><?php echo $product['productName']; ?></td>
-                <td class="right"><?php echo $product['listPrice']; ?></td>
-                <td><?php echo $product['brand']; ?></td>
-                <td><?php echo $product['shippingCost']; ?></td>
+                <td><?php echo $phone['phoneID']; ?></td>
+                <td><?php echo $phone['phoneName']; ?></td>
+                <td class="right"><?php echo $phone['company']; ?></td>
+                <td><?php echo $phone['RAM_GB']; ?></td>
+                <td><?php echo $phone['space']; ?></td>
                 <td><form action="delete_product.php" method="post">
-                    <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
+                    <input type="hidden" name="phone_id"
+                           value="<?php echo $phone['phoneID']; ?>">
                     <input type="submit" value="Delete">
                 </form></td>
             </tr>
@@ -52,7 +52,7 @@ $statement->closeCursor();
     </section>
 </main>
 <footer>
-    <p>&copy; <?php echo date("Y"); ?> Product Manager, Inc.</p>
+    <p>&copy; <?php echo date("Y"); ?> Phone Store, Inc.</p>
 </footer>
 </body>
 </html>
