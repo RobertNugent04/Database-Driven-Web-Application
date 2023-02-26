@@ -294,5 +294,3 @@ $statement->closeCursor();
     </body>
 </html>
 
-
-

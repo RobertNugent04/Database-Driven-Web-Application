@@ -3,6 +3,7 @@
     $username = 'D00244618';
     $password = 'exL29xLx';
 
+
     try {
         $db = new PDO($dsn, $username, $password);
     } catch (PDOException $e) {
