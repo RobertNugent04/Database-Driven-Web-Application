@@ -11,6 +11,7 @@
 	
 	<link rel="stylesheet" href="css/style.css">
 
+
 	</head>
 	<body>
 	<section class="ftco-section">
@@ -30,32 +31,43 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+													<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" onBlur="fname_validation();" required>
+													<span id="fn_err"></span>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+													<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" onBlur="lname_validation();" required>
+													<span id="ln_err"></span>
 												</div>
 											</div>
 											<div class="col-md-12"> 
 												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email" onBlur="email_validation();" required>
+													<span id="email_err"></span>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+													<input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" onBlur="phone_validation();" required>
+													<span id="phone_err"></span>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-control">
+													<select name="subject" id="subject" required>
+														<option value="" selected>Select a subject</option>
+														<option value="Product Query">Product Query</option>
+														<option value="General Query">General Query</option>
+														<option value="Other">Other</option>
+													  </select>
+													  <span id="sub_err"></span>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" onBlur="message_validation();" required></textarea>
+													<span id="msg_err"></span>
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -113,19 +125,9 @@
 		</div>
 	</section>
 
-	<script language="JavaScript">
-		var frmvalidator  = new Validator("contactform");
-		frmvalidator.addValidation("fname","req","Please provide your first name");
-		frmvalidator.addValidation("lname","req","Please provide your last name");  
-		frmvalidator.addValidation("email","req","Please provide your email");
-		frmvalidator.addValidation("email","email","Please enter a valid email address"); 
-		frmvalidator.addValidation("phone","req","Please provide your phone number"); 
-		frmvalidator.addValidation("subject","req","Please provide the subject of the message"); 
-		frmvalidator.addValidation("message","req","Please provide a message"); 
-		</script>
-
   <script src="js/bootstrap.min.js"></script>
 
 	</body>
+	<script src="js/validation.js"></script>
 </html>
 

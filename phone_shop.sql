@@ -20,12 +20,13 @@ CREATE TABLE phones(
   ,ratings    int(7)  NOT NULL
   ,stars      decimal(3,1) NOT NULL
   ,listPrice  int(5)  NOT NULL
+  ,image      varchar(200)
 );
 
 --
 -- Data adapted from https://www.kaggle.com/datasets/ginelledsouza/mobilephone 
 --
-INSERT INTO phones(phoneID,phoneName,company,RAM_GB,space,ratings,stars,listPrice) VALUES
+INSERT INTO phones(phoneID,phoneName,company,RAM_GB,space,ratings,stars,listPrice, image) VALUES
  (1,'Redmi 8 (Onyx Black, 64 GB)','Redmi',4,64,674638,4.4,10999)
 ,(2,'Realme 5i (Forest Green, 64 GB)','Realme',4,64,243106,4.5,10999)
 ,(3,'Realme 5i (Aqua Blue, 64 GB)','Realme',4,64,243106,4.5,10999)
@@ -157,15 +158,3 @@ UPDATE `phones` SET `image` = 'https://miot-global.com/uploads/CatalogueImage/pv
 UPDATE `phones` SET `image` = 'https://m.media-amazon.com/images/S/aplus-media/sota/54fc4e32-7d79-42af-97ab-10a00c4de34d.__CR0,0,300,300_PT0_SX300_V1___.jpg' WHERE `phones`.`phoneID` = 6;
 UPDATE `phones` SET `image` = 'https://mannaimart.com/wp-content/uploads/2020/06/Realme-xt-spesifikasi.jpeg' WHERE `phones`.`phoneID` = 7;
 UPDATE `phones` SET `image` = 'https://www.giztop.com/media/catalog/product/cache/16c8d0750a29c828f25a0e7d7ec24d2a/p/o/poco-x2-thumb.jpg' WHERE `phones`.`phoneID` = 8;
---
--- Indexes for table `products`
---
-ALTER TABLE `phones`
-  ADD PRIMARY KEY (`phoneID`),
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `phones`,
-  MODIFY `phoneID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
