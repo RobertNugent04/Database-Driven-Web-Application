@@ -11,150 +11,49 @@ USE `phone_shop`;
 --
 
 DROP TABLE IF EXISTS phones;
-CREATE TABLE phones(
-   phoneID    int(5) NOT NULL PRIMARY KEY AUTO_INCREMENT
-  ,phoneName varchar(44) NOT NULL
-  ,company    varchar(8) NOT NULL
-  ,RAM_GB     int(2)  NOT NULL
-  ,space      int(3)  NOT NULL
-  ,ratings    int(7)  NOT NULL
-  ,stars      decimal(3,1) NOT NULL
-  ,listPrice  int(5)  NOT NULL
-  ,image      varchar(200)
+CREATE TABLE phones 
+(
+    phoneID	INT(5),
+    osID INT(5),
+    companyID INT(5),
+    phoneName VARCHAR(30),
+    RAM	INT(5),
+    storage	INT(5),
+    stars	INT(1),
+    price	FLOAT(7),
+    images	VARCHAR(500)
 );
 
---
--- Data adapted from https://www.kaggle.com/datasets/ginelledsouza/mobilephone 
---
-INSERT INTO phones(phoneID,phoneName,company,RAM_GB,space,ratings,stars,listPrice, image) VALUES
- (1,'Redmi 8 (Onyx Black, 64 GB)','Redmi',4,64,674638,4.4,10999)
-,(2,'Realme 5i (Forest Green, 64 GB)','Realme',4,64,243106,4.5,10999)
-,(3,'Realme 5i (Aqua Blue, 64 GB)','Realme',4,64,243106,4.5,10999)
-,(4,'Redmi 8 (Sapphire Blue, 64 GB)','Redmi',4,32,674638,4.4,10999)
-,(5,'POCO X2 (Matrix Purple, 128 GB)','POCO',6,64,133486,4.5,19999)
-,(6,'POCO X2 (Atlantis Blue, 64 GB)','POCO',6,64,133486,4.5,18999)
-,(7,'Realme 6 (Comet Blue, 64 GB)','Realme',6,64,30619,4.4,17999)
-,(8,'POCO X2 (Atlantis Blue, 128 GB)','POCO',6,64,133486,4.5,19999)
-,(9,'Realme C11 (Rich Green, 32 GB)','Realme',2,128,17476,4.6,8999)
-,(10,'Realme C11 (Rich Grey, 32 GB)','Realme',2,32,17476,4.6,8999)
-,(11,'Realme Narzo 10A (So White, 32 GB)','Realme',3,32,42968,4.6,9999)
-,(12,'Realme Narzo 10A (So Blue, 64 GB)','Realme',4,64,17313,4.6,10999)
-,(13,'Realme Narzo 10A (So White, 64 GB)','Realme',4,32,17313,4.6,10999)
-,(14,'Realme Narzo 10A (So Blue, 32 GB)','Realme',3,64,42968,4.6,9999)
-,(15,'POCO X2 (Matrix Purple, 64 GB)','POCO',6,64,133486,4.5,18999)
-,(16,'Realme 6 (Comet White, 64 GB)','Realme',6,64,30619,4.4,17999)
-,(17,'Apple iPhone XR (Black, 64 GB)','Apple',0,32,11572,4.6,52500)
-,(18,'Infinix S5 Pro (Violet, 64 GB)','Infinix',4,64,12764,4.5,12999)
-,(19,'Motorola G8 Power Lite (Royal Blue, 64 GB)','Motorola',4,64,27992,4.4,9999)
-,(20,'Realme 6 Pro (Lightning Blue, 64 GB)','Realme',6,16,27363,4.5,17999)
-,(21,'Realme 6 Pro (Lightning Orange, 64 GB)','Realme',6,64,27363,4.5,17999)
-,(22,'Infinix Hot 9 Pro (Ocean Wave, 64 GB)','Infinix',4,64,17040,4.5,12999)
-,(23,'Infinix Hot 9 Pro (Violet, 64 GB)','Infinix',4,64,17040,4.5,12999)
-,(24,'Motorola G8 Power Lite (Arctic Blue, 64 GB)','Motorola',4,64,27992,4.4,9999)
-,(25,'Motorola G8 Power Lite (Arctic Blue, 64 GB)','Motorola',4,64,27992,4.4,9999)
-,(26,'Apple iPhone SE (White, 64 GB)','Apple',0,64,12954,4.5,42500)
-,(27,'OPPO A9 2020 (Space Purple, 128 GB)','OPPO',4,64,31725,4.3,18990)
-,(28,'OPPO A9 2020 (Marine Green, 128 GB)','OPPO',4,128,31725,4.3,18990)
-,(29,'Realme 6 Pro (Lightning Blue, 128 GB)','Realme',6,128,27363,4.5,18999)
-,(30,'Apple iPhone SE (Black, 64 GB)','Apple',0,32,12954,4.5,42500)
-,(31,'Apple iPhone XR ((PRODUCT)RED, 64 GB)','Apple',0,64,11572,4.6,52500)
-,(32,'Redmi Note 8 Pro (Electric Blue, 128 GB)','Redmi',6,64,55815,4.4,17999)
-,(33,'Apple iPhone SE (Red, 64 GB)','Apple',0,128,12954,4.5,42500)
-,(34,'Vivo Y15 (Burgundy Red, 64 GB)','Vivo',4,64,20969,4.4,15990)
-,(35,'Vivo Y15 (Aqua Blue, 64 GB)','Vivo',4,64,20969,4.4,15990)
-,(36,'Redmi 8A Dual (Sea Blue, 64 GB)','Redmi',3,64,974,4.3,9750)
-,(37,'Redmi 8A Dual (Sea Blue, 32 GB)','Redmi',2,64,1246,4.2,8320)
-,(38,'Redmi 8A Dual (Sky White, 32 GB)','Redmi',2,64,1246,4.2,8499)
-,(39,'Vivo Y12 (Aqua Blue, 64 GB)','Vivo',3,64,13266,4.4,13990)
-,(40,'Vivo Y12 (Burgundy Red, 64 GB)','Vivo',3,16,13266,4.4,13990)
-,(41,'OPPO A5s (Blue, 32 GB)','OPPO',2,32,5815,4.3,12990)
-,(42,'OPPO A5s (Black, 64 GB)','OPPO',4,32,5365,4.3,15990)
-,(43,'Redmi Note 8 Pro (Halo White, 128 GB)','Redmi',6,64,55815,4.4,17999)
-,(44,'Apple iPhone SE (Black, 128 GB)','Apple',0,64,12954,4.5,47800)
-,(45,'Realme 6 Pro (Lightning Orange, 128 GB)','Realme',6,64,27363,4.5,18999)
-,(46,'OPPO A31 (Mystery Black, 64 GB)','OPPO',4,32,9454,4.3,12990)
-,(47,'OPPO A31 (Fantasy White, 64 GB)','OPPO',4,64,9454,4.3,12990)
-,(48,'Apple iPhone XR (Blue, 64 GB)','Apple',0,128,11572,4.6,52500)
-,(49,'Apple iPhone XR (Blue, 64 GB)','Apple',0,64,11572,4.6,52500)
-,(50,'I Kall K6 (Red, 32 GB)','I Kall',4,64,615,3,7299)
-,(51,'Vivo Y11 (Agate Red, 32 GB)','Vivo',3,64,4744,4.4,9990)
-,(52,'Vivo Y11 (Mineral Blue, 32 GB)','Vivo',3,128,4744,4.4,9990)
-,(53,'Vivo U10 (Electric Blue, 32 GB)','Vivo',3,128,34333,4.4,10990)
-,(54,'I Kall K1000 (Blue, 64 GB)','I Kall',4,32,840,2.9,7699)
-,(55,'Vivo U10 (Thunder Black, 32 GB)','Vivo',3,64,34333,4.4,10990)
-,(56,'POCO X2 (Atlantis Blue, 256 GB)','POCO',8,64,42062,4.5,22999)
-,(57,'Redmi Note 8 Pro (Shadow Black, 128 GB)','Redmi',6,128,55815,4.4,17999)
-,(58,'Realme 6 (Comet White, 128 GB)','Realme',6,64,30620,4.4,16999)
-,(59,'OPPO A9 2020 (Space Purple, 128 GB)','OPPO',8,64,11436,4.3,21990)
-,(60,'I Kall K220 (Blue, 16 GB)','I Kall',2,64,58,3.1,5699)
-,(61,'OPPO A9 2020 (Marine Green, 128 GB)','OPPO',8,64,11436,4.3,21990)
-,(62,'Infinix Smart 4 Plus (Violet, 32 GB)','Infinix',3,64,53,4.2,9999)
-,(63,'Infinix Smart 4 Plus (Ocean Wave, 32 GB)','Infinix',3,64,53,4.2,9999)
-,(64,'I Kall K400 (Blue, 64 GB)','I Kall',4,16,512,2.8,7299)
-,(65,'Infinix Smart 4 Plus (Midnight Black, 32 GB)','Infinix',3,32,53,4.2,9999)
-,(66,'OPPO A12 (Black, 32 GB)','OPPO',3,32,10388,4.3,10990)
-,(67,'OPPO A12 (Blue, 64 GB)','OPPO',4,64,666,4.4,11990)
-,(68,'OPPO A12 (Blue, 32 GB)','OPPO',3,64,10388,4.3,10990)
-,(69,'OPPO A12 (Black, 64 GB)','OPPO',4,64,666,4.4,11990)
-,(70,'OPPO A5s (Green, 64 GB)','OPPO',4,32,5365,4.3,15990)
-,(71,'OPPO A5s (Gold, 64 GB)','OPPO',4,64,5365,4.3,15990)
-,(72,'Realme Narzo 10 (That Green, 128 GB)','Realme',4,128,74661,4.5,12999)
-,(73,'Vivo Z1x (Fusion Blue, 64 GB)','Vivo',6,128,146650,4.4,19990)
-,(74,'I Kall K6 (Red, 32 GB)','I Kall',4,32,615,3,7299)
-,(75,'Vivo Z1x (Phantom Purple, 64 GB)','Vivo',6,128,146650,4.4,19990)
-,(76,'Vivo Z1x (Fusion Blue, 128 GB)','Vivo',8,32,19380,4.4,24990)
-,(77,'Nokia 105 SS','Nokia',4,64,75730,4.3,1299)
-,(78,'Apple iPhone 7 Plus (Black, 32 GB)','Apple',0,64,27442,4.5,37900)
-,(79,'Realme 6 (Comet White, 128 GB)','Realme',8,128,23466,4.4,17999)
-,(80,'I Kall K1000 (Blue, 64 GB)','I Kall',4,64,840,2.9,7699)
-,(81,'Tecno Spark Power 2 (Misty Grey, 64 GB)','Tecno',4,4,9603,4.4,11999)
-,(82,'Realme Narzo 10 (That White, 128 GB)','Realme',4,32,74661,4.5,12999)
-,(83,'Realme Narzo 10 (That Blue, 128 GB)','Realme',4,128,74661,4.5,12999)
-,(84,'I Kall K220 (Blue, 16 GB)','I Kall',2,16,58,3.1,5699)
-,(85,'OPPO F15 (Unicorn White, 128 GB)','OPPO',8,64,10277,4.4,22990)
-,(86,'OPPO F15 (Blazing Blue, 128 GB)','OPPO',8,128,10277,4.4,22990)
-,(87,'Redmi Note 8 Pro (Shadow Black, 128 GB)','Redmi',8,128,7137,4.4,19999)
-,(88,'Vivo Y91i (Fusion Black, 32 GB)','Vivo',2,128,21196,4.3,9990)
-,(89,'Vivo Y91i (Ocean Blue, 32 GB)','Vivo',2,128,21196,4.3,9990)
-,(90,'I Kall K400 (Blue, 64 GB)','I Kall',4,64,512,2.8,7299)
-,(91,'Vivo S1 Pro (Mystic Black, 128 GB)','Vivo',8,128,11571,4.4,20990)
-,(92,'Tecno Camon 15 (Fascinating Purple, 64 GB)','Tecno',4,32,2219,4.2,12499)
-,(93,'Tecno Camon 15 (SHOAL GOLD, 64 GB)','Tecno',4,32,2219,4.2,12499)
-,(94,'Vivo Y30 (Emerald Black, 128 GB)','Vivo',4,32,604,4.3,18990)
-,(95,'Vivo Y30 (Dazzle Blue, 128 GB)','Vivo',4,128,604,4.3,18990)
-,(96,'Apple iPhone XR (White, 128 GB)','Apple',0,64,11572,4.6,57800)
-,(97,'Realme C3 (Blazing Red, 32 GB)','Realme',3,32,67430,4.5,8999)
-,(98,'Realme C3 (Frozen Blue, 32 GB)','Realme',3,32,67430,4.5,8999)
-,(99,'Realme C3 (Frozen Blue, 64 GB)','Realme',4,64,117862,4.5,9999)
-,(100,'I Kall K6 (Red, 32 GB)','I Kall',4,32,615,3,7299)
-,(101,'Realme C2 (Diamond Blue, 32 GB)','Realme',2,32,805006,4.4,7999)
-,(102,'Realme C2 (Diamond Black, 32 GB)','Realme',2,32,805006,4.4,7999)
-,(103,'Realme C2 (Diamond Black, 32 GB)','Realme',3,32,133935,4.4,8999)
-,(104,'I Kall K1000 (Blue, 64 GB)','I Kall',4,64,840,2.9,7699)
-,(105,'Infinix S5 Pro (Forest Green, 64 GB)','Infinix',4,64,12764,4.5,12999)
-,(106,'Realme C2 (Diamond Sapphire, 32 GB)','Realme',3,32,133935,4.4,8999)
-,(107,'Realme C2 (Diamond Ruby, 32 GB)','Realme',3,32,133935,4.4,8999)
-,(108,'I Kall K220 (Blue, 16 GB)','I Kall',2,16,58,3.1,5699)
-,(109,'Realme C2 (Diamond Blue, 32 GB)','Realme',3,32,133935,4.4,8999)
-,(110,'Infinix S5 Pro (Sea Blue, 64 GB)','Infinix',4,64,12764,4.5,12999)
-,(111,'Realme 6 (Comet Blue, 64 GB)','Realme',4,64,59665,4.4,14999)
-,(112,'I Kall K400 (Blue, 64 GB)','I Kall',4,64,512,2.8,7299)
-,(113,'Realme 6 (Comet White, 64 GB)','Realme',4,64,59665,4.4,14999)
-,(114,'Redmi 8A Dual (Midnight Grey, 32 GB)','Redmi',3,32,974,4.3,7999)
-,(115,'Realme 6 Pro (Lightning Orange, 128 GB)','Realme',6,128,27365,4.5,18999)
-,(116,'Lava 34 Plus','Lava',32,32,361,4.1,1699)
-,(117,'Realme 6 (Comet Blue, 128 GB)','Realme',6,128,30622,4.4,16999)
-,(118,'Realme 6 Pro (Lightning Orange, 128 GB)','Realme',8,128,14361,4.4,19999)
-,(119,'I Kall K14 New','I Kall',32,64,7229,3.4,609)
-,(120,'Apple iPhone XR (White, 64 GB)','Apple',0,64,11572,4.6,52500);
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('1', '2', '1', 'Apple iPhone 13 ', '4', '128', '5', '699', 'https://media.currys.biz/i/currysprod/M10230581_black_001?$l-large$&fmt=auto');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('2', '2', '1', 'Apple iPhone 14 ', '6', '256', '4.5', '794', 'https://hniesfp.imgix.net/8/images/detailed/342/iPhone_Apple_IPHONE14256GBBLUE.jpg?fit=fill&bg=0FFF&w=1500&h=1000&auto=format,compress');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('3', '1', '2', 'HUAWEI P50 Pro', '8', '256', '4', '699', 'https://snapcraze.co.za/wp-content/uploads/2022/05/p50-pro-black.jpeg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('4', '1', '3', 'Samsung Galaxy A03s', '3', '32', '4.5', '109.9', 'https://i5.walmartimages.com/asr/c89c849d-e744-490c-b0ca-5bd40cdfdf95.0dcc0cd03d0b1e504e3bdfff7977b644.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('5', '1', '3', 'Samsung Galaxy M23', '4', '128', '4.5', '258.92', 'https://dakauf.eu/wp-content/uploads/2022/10/Samsung-M23_-light_blue.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('6', '1', '4', 'Sony Xperia XA2', '4', '32', '4', '170.99', 'https://m.media-amazon.com/images/I/81CAOW1WC8L._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('7', '3', '5', 'Nokia Lumia 635', '0.5', '8', '3.5', '80.99', 'https://m.media-amazon.com/images/I/81UppCaSApS._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('8', '3', '5', 'Nokia Lumia 520', '8', '64', '3.5', '90', 'https://www.gsmasia.net/wp-content/uploads/2016/12/Nokia-Lumia-520.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('9', '1', '4', 'Sony Xperia L3', '3', '32', '4.5', '159.99', 'https://m.media-amazon.com/images/I/81ZXRk9CikL._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('10', '3', '6', 'Microsoft Lumia 650', '2', '16', '4', '160', 'https://m.media-amazon.com/images/I/81VghfQTabL._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('11', '2', '1', 'Apple iPhone 12', '4', '128', '4.5', '499.99', 'https://cdn.shopify.com/s/files/1/0824/3121/products/iphone-green_3ab1c6d4-fa9e-47a5-bb20-f47cf302bea2_1024x1024.jpg?v=1658394945');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('12', '2', '1', 'Apple iPhone 7', '3', '128', '4', '249.99', 'https://cdn.shopify.com/s/files/1/0022/6728/3545/products/Apple_iPhone_7_-_Black_800x.jpg?v=1653391180');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('13', '2', '1', 'Apple iPhone 8', '4', '256', '4.5', '199.99', 'https://files.refurbed.com/ii/apple-iphone-8-plus-1639478333.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('14', '1', '2', 'Huawei P30 Lite', '4', '128', '5', '225', 'https://cdn.shopify.com/s/files/1/0242/8138/2946/products/P30LITE_1_41f1fb6f-5d25-4c63-ad57-c2e31bd4759c.jpg?v=1655621176');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('15', '1', '2', 'Huawei Nova 5T', '4', '128', '5', '399.99', 'https://specs-tech.com/wp-content/uploads/2019/09/Huawei-nova-5T.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('16', '1', '2', 'Huawei P Smart', '4', '256', '5', '145', 'https://m.media-amazon.com/images/I/61-oalD1jUL._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('17', '1', '2', 'Huawei P40 Pro', '8', '256', '5', '999.99', 'https://d1eh9yux7w8iql.cloudfront.net/product_images/343826_abaffe0f-03b3-4ed5-8ee4-b3076d35f3ea.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('18', '1', '4', 'Sony Xperia 5 III', '5', '256', '4', '599', 'https://m.media-amazon.com/images/I/617QvfVAyvL._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('19', '3', '6', 'Microsoft Lumia 950', '4', '32', '3.5', '199.99', 'https://m.media-amazon.com/images/I/71n8u+3+NIL._AC_SS450_.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('20', '1', '3', 'Samsung Galaxy A13', '4', '64', '5', '141', 'https://expertlaois.ie/wp-content/uploads/2023/01/samsung-a13.png');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('21', '1', '3', 'Samsung Galaxy S23', '5', '256', '4', '1049', 'https://cdn11.bigcommerce.com/s-8ek7z3h3jn/images/stencil/1280x1280/products/8254/40872/samsung-galaxy-s23-128gb-purple-or-sm-s911blideub__02061.1675817133.jpg?c=1');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('22', '3', '6', 'Microsoft Lumia 640', '2', '8', '4', '145', 'https://i.ebayimg.com/images/g/Aj0AAOSwGUdhMKFK/s-l1600.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('23', '1', '4', 'Sony Xperia 10 IV', '5', '6', '4.5', '379.99', 'https://www.mytrendyphone.ie/images/Sony-Xperia-10-IV-128GB-Black-4589771645628-15082022-01-p.webp');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('24', '2', '1', 'Apple iPhone 11', '5', '128', '4.5', '489', 'https://itrepairs.ie/wp-content/uploads/2022/05/iphone11-black-select-2019_GEO_EMEA.jpg');
 
-ALTER TABLE `phones` ADD `image` VARCHAR(200) NOT NULL AFTER `listPrice`;
-
-UPDATE `phones` SET `image` = 'https://www.mtech.am/image/cache/catalog/Products/Xiaomi-Redmi-8-Onyx-Blac-64GB/1-800x800.jpg' WHERE `phones`.`phoneID` = 1;
-UPDATE `phones` SET `image` = 'https://image05.realme.net/general/20200430/1588254191589.jpg' WHERE `phones`.`phoneID` = 2;
-UPDATE `phones` SET `image` = 'https://priceyar.com/wp-content/uploads/2023/01/Realme-5i-300x300.jpg' WHERE `phones`.`phoneID` = 3;
-UPDATE `phones` SET `image` = 'https://evelatus.lv/images/thumbnails/1398/1398/detailed/559/31969_2040.jpg' WHERE `phones`.`phoneID` = 4;
-UPDATE `phones` SET `image` = 'https://miot-global.com/uploads/CatalogueImage/pvm_poco_x2_%20(1)_17998_1582495935.jpg' WHERE `phones`.`phoneID` = 5;
-UPDATE `phones` SET `image` = 'https://m.media-amazon.com/images/S/aplus-media/sota/54fc4e32-7d79-42af-97ab-10a00c4de34d.__CR0,0,300,300_PT0_SX300_V1___.jpg' WHERE `phones`.`phoneID` = 6;
-UPDATE `phones` SET `image` = 'https://mannaimart.com/wp-content/uploads/2020/06/Realme-xt-spesifikasi.jpeg' WHERE `phones`.`phoneID` = 7;
-UPDATE `phones` SET `image` = 'https://www.giztop.com/media/catalog/product/cache/16c8d0750a29c828f25a0e7d7ec24d2a/p/o/poco-x2-thumb.jpg' WHERE `phones`.`phoneID` = 8;
+DROP TABLE IF EXISTS companies;
+CREATE TABLE `phone_store`.`companies` (`companyID` INT(5) NOT NULL , `companyName` VARCHAR(20) NOT NULL , PRIMARY KEY (`companyID`)) ENGINE = InnoDB;
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('1', 'Apple');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('2', 'Huawei');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('3', 'Samsung');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('4', 'Sony');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('6', 'Nokia');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('7', 'Microsoft');
