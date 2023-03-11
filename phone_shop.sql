@@ -1,10 +1,31 @@
 --
 -- Database: `phone_shop`
 --
-CREATE DATABASE IF NOT EXISTS `phone_shop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `phone_catalogue` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `phone_shop`;
 
 -- --------------------------------------------------------
+
+DROP TABLE IF EXISTS operating_systems;
+CREATE TABLE `operating_systems` (
+  `osID` int(1) NOT NULL,
+  `operating_system` varchar(10) NOT NULL,
+  PRIMARY KEY (`osID`)
+);
+
+INSERT INTO `operating_systems` (`osID`, `operating_system`) VALUES
+(1, 'Android'),
+(2, 'IOS'),
+(3, 'Windows');
+
+DROP TABLE IF EXISTS companies;
+CREATE TABLE companies (`companyID` INT(5) NOT NULL , `companyName` VARCHAR(20) NOT NULL , PRIMARY KEY (`companyID`)) ENGINE = InnoDB;
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('1', 'Apple');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('2', 'Huawei');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('3', 'Samsung');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('4', 'Sony');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('5', 'Nokia');
+INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('6', 'Microsoft');
 
 --
 -- Table structure for table `products`
@@ -21,7 +42,10 @@ CREATE TABLE phones
     storage	INT(5),
     stars	INT(1),
     price	FLOAT(7),
-    images	VARCHAR(500)
+    images	VARCHAR(500),
+    PRIMARY KEY (phoneID),
+    FOREIGN KEY(osID) REFERENCES operating_systems(osID),
+    FOREIGN KEY(companyID) REFERENCES companies(companyID)
 );
 
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('1', '2', '1', 'Apple iPhone 13 ', '4', '128', '5', '699', 'https://media.currys.biz/i/currysprod/M10230581_black_001?$l-large$&fmt=auto');
@@ -48,12 +72,3 @@ INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, pr
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('22', '3', '6', 'Microsoft Lumia 640', '2', '8', '4', '145', 'https://i.ebayimg.com/images/g/Aj0AAOSwGUdhMKFK/s-l1600.jpg');
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('23', '1', '4', 'Sony Xperia 10 IV', '5', '6', '4.5', '379.99', 'https://www.mytrendyphone.ie/images/Sony-Xperia-10-IV-128GB-Black-4589771645628-15082022-01-p.webp');
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('24', '2', '1', 'Apple iPhone 11', '5', '128', '4.5', '489', 'https://itrepairs.ie/wp-content/uploads/2022/05/iphone11-black-select-2019_GEO_EMEA.jpg');
-
-DROP TABLE IF EXISTS companies;
-CREATE TABLE `phone_store`.`companies` (`companyID` INT(5) NOT NULL , `companyName` VARCHAR(20) NOT NULL , PRIMARY KEY (`companyID`)) ENGINE = InnoDB;
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('1', 'Apple');
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('2', 'Huawei');
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('3', 'Samsung');
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('4', 'Sony');
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('6', 'Nokia');
-INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('7', 'Microsoft');
