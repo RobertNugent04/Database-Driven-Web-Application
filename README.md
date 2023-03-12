@@ -1,4 +1,4 @@
-# Amazon's Top Phones Catalogue - A PHP college project
+![Title](images/title.png)
 
 # Preview
 
