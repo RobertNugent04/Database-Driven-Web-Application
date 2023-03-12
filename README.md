@@ -2,7 +2,7 @@
 
 # Preview
 
-![alt text](prev1.png)
+![alt text](https://github.com/[RobertNugent04]/[ServerSideCA2]/[main]/prev1.png?raw=true)
 
 # Getting Started
 
