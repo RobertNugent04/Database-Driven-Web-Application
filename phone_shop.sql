@@ -34,7 +34,7 @@ INSERT INTO `companies` (`companyID`, `companyName`) VALUES ('6', 'Microsoft');
 DROP TABLE IF EXISTS phones;
 CREATE TABLE phones 
 (
-    phoneID	INT(5),
+    phoneID	INT(5) NOT NULL AUTO_INCREMENT,
     osID INT(5),
     companyID INT(5),
     phoneName VARCHAR(30),
@@ -72,3 +72,13 @@ INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, pr
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('22', '3', '6', 'Microsoft Lumia 640', '2', '8', '4', '145', 'https://i.ebayimg.com/images/g/Aj0AAOSwGUdhMKFK/s-l1600.jpg');
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('23', '1', '4', 'Sony Xperia 10 IV', '5', '6', '4.5', '379.99', 'https://www.mytrendyphone.ie/images/Sony-Xperia-10-IV-128GB-Black-4589771645628-15082022-01-p.webp');
 INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('24', '2', '1', 'Apple iPhone 11', '5', '128', '4.5', '489', 'https://itrepairs.ie/wp-content/uploads/2022/05/iphone11-black-select-2019_GEO_EMEA.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('25', '1', '3', 'Samsung Galaxy A52s', '6', '128', '4.7', '499.99', 'https://compudocshop.ie/wp-content/uploads/2022/11/a52s.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('26', '1', '3', 'Samsung Galaxy S21 Ultra', '12', '256', '4.8', '1249.99', 'https://cdn.shopify.com/s/files/1/0573/3207/2636/products/samsung-galaxy-s21-ultra-5g-128gb-black-or-sm-g998bzkdeu-did-electrical-1_600x.jpg?v=1656169884');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('27', '1', '3', 'Samsung Galaxy Z Fold3', '12', '256', '4.9', '1799.99', 'https://bsimg.nl/images/samsung-galaxy-z-fold3-256gb-zwart_9.jpg/FgowrhgotEm4Pnt0JEBClpEnHYw%3D/fit-in/0x0/filters%3Aupscale%28%29');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('28', '1', '3', 'Samsung Galaxy A13', '4', '64', '4.2', '249.99', 'https://rechargephones.ie/wp/wp-content/uploads/2022/10/Samsung-A13-Black.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('29', '3', '5', 'Nokia 6.4', '6', '128', '4.5', '399.99', 'https://www.mobilewithprices.com/products/Nokia-6.4.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('30', '3', '5', 'Nokia X10', '6', '128', '4.7', '429.99', 'https://www.celticrepairs.ie/wp-content/uploads/2021/10/Nokia-X10-Screen-Replacement.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('31', '1', '4', 'Sony Xperia 5 II', '8', '128', '4.7', '949.99', 'https://mymobilemarket.net/wp-content/uploads/2019/08/sony-xperia-5-ii-5g-r.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('32', '1', '4', 'Sony Xperia 1 III', '12', '256', '4.8', '1399.99', 'https://i.expansys.net/img/b/354627/sony-xperia-1-iii.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('33', '1', '4', 'Sony Xperia L4', '3', '64', '4', '199.99', 'https://www.pdevice.com/wp-content/uploads/2020/02/Sony-Xperia-L4.jpg');
+INSERT INTO phones (phoneID, osID, companyID, phoneName, RAM, storage, stars, price, images) VALUES ('34', '1', '4', 'Sony Xperia 10 III', '6', '128', '4.3', '499.99', 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71v2qIXg7KS._AC_SY450_.jpg');

@@ -23,9 +23,6 @@ $statement->closeCursor();
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-
-        <!--Bootstrap template from https://startbootstrap.com/template/shop-homepage-->
-
     </head>
     <body>
         <!-- Navigation-->
@@ -35,14 +32,13 @@ $statement->closeCursor();
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="adminIndex.php">Home</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="phones.php">Catalogue</a>
+                            <a class="nav-link" href="adminPhones.php">Catalogue</a>
 
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     </ul>
-                    <a class="btn btn-primary" href="login.php">Log in</a>
+                    <a class="btn btn-primary" href="index.php">Log Out</a>
                 </div>
             </div>
         </nav>
@@ -78,10 +74,16 @@ $statement->closeCursor();
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a href="product.php?id=<?php echo $phones[$i]['phoneID']; ?>" class="btn btn-outline-dark mt-auto">View</a></div>
+    <div class="d-flex flex-column align-items-center">
+        <a href="product.php?id=<?php echo $phone['phoneID']; ?>" class="btn btn-outline-dark mt-auto">View</a>
+        <form action="delete_product.php" method="post">
+            <input type="hidden" name="phone_id" value="<?php echo $phone['phoneID']; ?>">
+            <input class="btn btn-outline-dark mt-3" type="submit" value="Delete">
+        </form>
+    </div>
+</div>                   
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>

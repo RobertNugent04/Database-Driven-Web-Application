@@ -15,4 +15,4 @@ if ($phone_id != false) {
 }
 
 // Display the Product List page
-include('index.php');
+include('adminPhones.php');

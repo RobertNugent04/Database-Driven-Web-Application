@@ -60,14 +60,13 @@ $statement->closeCursor();
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="adminIndex.php">Home</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="phones.php">Catalogue</a>
+                            <a class="nav-link" href="adminPhones.php">Catalogue</a>
 
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     </ul>
-                    <a class="btn btn-primary" href="login.php">Log in</a>
+                    <a class="btn btn-primary" href="phones.php">Log Out</a>
                 </div>
             </div>
         </nav>
@@ -79,6 +78,7 @@ $statement->closeCursor();
       <form class="mb-4">
         <div class="mt-5 d-flex flex-wrap">
         <label class="mb-3 me-3">
+        <a class="btn btn-secondary my-lg-3" href="addPhone.html">Add Phone</a>
             <input type="submit" name="operating_system" class="btn btn-secondary" value="Show All" <?php if (!isset($_GET['operating_system']) || $_GET['operating_system'] === 'Show All') { echo 'checked'; } ?>>
           </label>
           <label for="operating_system" class="me-3"><h4>OS:</h4></label>
@@ -109,7 +109,6 @@ $statement->closeCursor();
         </div>
       </form>
     </div>
-
     <div class="col-md-11">
     <!-- Product grid-->
     <section class="py-5">
@@ -132,7 +131,11 @@ $statement->closeCursor();
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
     <div class="d-flex flex-column align-items-center">
-        <a href="product.php?id=<?php echo $phone['phoneID']; ?>" class="btn btn-outline-dark mt-auto">View</a>
+        <a href="adminProduct.php?id=<?php echo $phone['phoneID']; ?>" class="btn btn-outline-dark mt-auto">View</a>
+        <form action="delete_product.php" method="post">
+            <input type="hidden" name="phone_id" value="<?php echo $phone['phoneID']; ?>">
+            <input class="btn btn-outline-dark mt-3" type="submit" value="Delete">
+        </form>
     </div>
 </div>                   
                     </div>
