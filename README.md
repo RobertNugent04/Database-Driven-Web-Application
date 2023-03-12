@@ -8,6 +8,10 @@
 
 # Getting Started
 
+## Admin Login Details
+Email: admin@gmail.com
+Password: admin123
+
 ## Setup Instructions for database
 - Create database using 'phone_shop.sql'
 - Change details in database.php to your database details
