@@ -8,10 +8,9 @@
 
 # Getting Started
 
-## Setup Instructions
+## Setup Instructions for database
 - Create database using 'phone_shop.sql'
 - Change details in database.php to your database details
-- Deploy on a server
 - Access the project's index file location on the server 
 
 ## Application Features
