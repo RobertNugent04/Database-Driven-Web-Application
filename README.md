@@ -8,10 +8,9 @@
 
 # Getting Started
 
-## Setup Instructions
+## Setup Instructions for database
 - Create database using 'phone_shop.sql'
 - Change details in database.php to your database details
-- Deploy on a server
 - Access the project's index file location on the server 
 
 ## Application Features
@@ -23,4 +22,4 @@
 
 # View the running application
 
-Click the following link to see the application running: [applacation](https://mysql07.comp.dkit.ie/D00244618/ServerSideCA2/index.php)
+Click the following link to see the application running: [Click here](https://mysql07.comp.dkit.ie/D00244618/ServerSideCA2/index.php)
