@@ -1,5 +1,9 @@
 # Amazon's Top Phones Catalogue - A PHP college project
 
+# Preview
+
+![alt text](prev1.png)
+
 # Getting Started
 
 ## Setup Instructions
