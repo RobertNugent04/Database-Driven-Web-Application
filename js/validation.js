@@ -31,24 +31,6 @@ function fname_validation(){
         }
         }
 
-    //country validation starts
-    function country_validation(){
-    'use strict';
-    var country_name = document.getElementById("country");
-    var country_value = document.getElementById("country").value;
-    if(country_value === "Default" || country_value === "--")
-    {
-    document.getElementById('country_err').innerHTML = 'You must select a country';
-    country_name.focus();
-    document.getElementById('country_err').style.color = "#FF0000";
-    }
-    else
-    {
-    document.getElementById('country_err').innerHTML = 'Country selected.';
-    document.getElementById('country_err').style.color = "#00AF33";
-    }
-    }
-    //country validation ends
 
     //email validation starts
     function email_validation(){

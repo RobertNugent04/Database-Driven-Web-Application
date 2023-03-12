@@ -1,10 +1,6 @@
 --
--- Database: `phone_shop`
+-- Database: `D00244618`
 --
-CREATE DATABASE IF NOT EXISTS `phone_catalogue` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `phone_shop`;
-
--- --------------------------------------------------------
 
 DROP TABLE IF EXISTS operating_systems;
 CREATE TABLE `operating_systems` (
