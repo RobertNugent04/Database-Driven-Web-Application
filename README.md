@@ -23,4 +23,4 @@
 
 # View the running application
 
-Click the following link to see the application running: (https://mysql07.comp.dkit.ie/D00244618/ServerSideCA2/index.php)
+Click the following link to see the application running: [Click here](https://mysql07.comp.dkit.ie/D00244618/ServerSideCA2/index.php)
